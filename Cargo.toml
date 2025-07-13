@@ -1,0 +1,54 @@
+[package]
+name = "my-yew-app"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+yew = { version = "0.21", features = ["csr"] }
+wasm-bindgen = "0.2"
+js-sys = "0.3"
+
+# Optional but commonly used dependencies
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+gloo = "0.11"  # Utilities for web development
+wasm-bindgen-futures = "0.4"  # For async/await support
+
+# For HTTP requests
+reqwest = { version = "0.11", features = ["json"] }
+
+# For routing (if you need client-side routing)
+yew-router = "0.18"
+
+# For local storage
+gloo-storage = "0.3"
+
+[dependencies.web-sys]
+version = "0.3"
+features = [
+    "console",
+    "Document",
+    "Element",
+    "HtmlElement",
+    "Window",
+    "Location",
+    "History",
+    "Storage",
+    "Event",
+    "EventTarget",
+    "MouseEvent",
+    "KeyboardEvent",
+    "InputEvent",
+    "HtmlInputElement",
+    "HtmlTextAreaElement",
+    "HtmlSelectElement",
+    "HtmlFormElement",
+    "FormData",
+    "Request",
+    "RequestInit",
+    "Response",
+    "Headers",
+]
